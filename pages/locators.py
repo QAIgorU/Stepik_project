@@ -12,6 +12,6 @@ class ProductPageLocators():
     ADD_TO_BASKET = (By.CSS_SELECTOR, ".btn-add-to-basket")
     PRODUCT_NAME = (By.CSS_SELECTOR, "#messages div.alertinner")
     PRODUCT_PRICE_BASKET = (By.CSS_SELECTOR, ".alert-info p:first-child")
-    PRODUCT_PRICE_STORE = (By.CSS_SELECTOR, ".price_color")
+    PRODUCT_PRICE_STORE = (By.CSS_SELECTOR, "#content_inner p.price_color")
 
     #пустая строка
