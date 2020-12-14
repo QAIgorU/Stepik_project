@@ -8,9 +8,11 @@ class ProductPage(BasePage):
         button.click()
 
     def guest_can_see_product_name(self):
-        product_name = self.browser.find_element(*ProductPageLocators.PRODUCT_NAME)
-        print(product_name.text)
-        assert "The shellcoder's handbook был добавлен в вашу корзину." in product_name.text, "Product name is no the same"
+        product_name_in_basket = self.browser.find_element(*ProductPageLocators.PRODUCT_NAME_IN_BASKET)
+        product_name_in_store = self.browser.find_element(*ProductPageLocators.PRODUCT_NAME_IN_STORE)
+        print(product_name_in_basket.text)
+        print(product_name_in_store.text)
+        assert product_name_in_store.text in product_name_in_basket.text, "Product name is no the same"
 
     def product_price_is_correct(self):
         product_price_in_basket = self.browser.find_element(*ProductPageLocators.PRODUCT_PRICE_BASKET)
