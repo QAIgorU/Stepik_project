@@ -9,7 +9,6 @@ class LoginPage(BasePage):
         self.should_be_login_url()
         self.should_be_login_form()
         self.should_be_register_form()
-        #self.register_new_user(email, password)
 
     def should_be_login_url(self):
         #assert "who_run_the_word" in self.browser.current_url, "'login' not in current url" #для проверки что тест может отработать с ошибкой
@@ -38,6 +37,3 @@ class LoginPage(BasePage):
         print(button_register.text)
         button_register.click()
         time.sleep(6)
-
-
-    #assert "some_word" in self.browser.current_url, "'login' not in current url"
