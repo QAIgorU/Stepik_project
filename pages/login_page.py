@@ -10,7 +10,6 @@ class LoginPage(BasePage):
         self.should_be_register_form()
 
     def should_be_login_url(self):
-        #assert "who_run_the_word" in self.browser.current_url, "'login' not in current url" #для проверки что тест может отработать с ошибкой
         assert "login" in self.browser.current_url, "'login' not in current url"
 
     def should_be_login_form(self):
@@ -22,14 +21,10 @@ class LoginPage(BasePage):
     def register_new_user(self, email, password, browser):
         input1 = browser.find_element(By.CSS_SELECTOR, "#id_registration-email")
         input1.send_keys(email)
-        print(email)
         input2 = browser.find_element(By.CSS_SELECTOR, "#id_registration-password1")
         input2.send_keys(password)
-        print(password)
         input3 = browser.find_element(By.CSS_SELECTOR, "#id_registration-password2")
         input3.send_keys(password)
-        print(password)
         button_register = browser.find_element(By.CSS_SELECTOR, "#register_form .btn-primary")
-        print(button_register.text)
         button_register.click()
 
