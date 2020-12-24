@@ -10,24 +10,22 @@ class ProductPage(BasePage):
     def guest_can_see_product_name(self):
         product_name_in_basket = self.browser.find_element(*ProductPageLocators.PRODUCT_NAME_IN_BASKET)
         product_name_in_store = self.browser.find_element(*ProductPageLocators.PRODUCT_NAME_IN_STORE)
-        print(product_name_in_basket.text)
-        print(product_name_in_store.text)
         assert product_name_in_store.text == product_name_in_basket.text, "Product name is no the same"
 
     def product_price_is_correct(self):
         product_price_in_basket = self.browser.find_element(*ProductPageLocators.PRODUCT_PRICE_BASKET)
         product_prise_in_store = self.browser.find_element(*ProductPageLocators.PRODUCT_PRICE_STORE)
-        print(product_price_in_basket.text)
-        print(product_prise_in_store.text)
         assert product_prise_in_store.text == product_price_in_basket.text, "Price is wrong"
 
     def check_message_about_adding_to_basket(self):
         basket_message = self.browser.find_element(*ProductPageLocators.SUCCESS_MESSAGE)
-        print(basket_message.text)
-        assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGE), "Success message is presented, but should not be"
+        assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGE), \
+            "Success message is presented, but should not be"
 
     def check_success_message_on_product_page(self):
-        assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGE), "Success message is presented, but should not be"
+        assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGE), \
+            "Success message is presented, but should not be"
 
     def check_success_message_is_disappeared(self):
-        assert self.is_disappeared(*ProductPageLocators.SUCCESS_MESSAGE), "Success message is not disappeared"
+        assert self.is_disappeared(*ProductPageLocators.SUCCESS_MESSAGE), \
+            "Success message is not disappeared"
