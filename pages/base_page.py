@@ -14,7 +14,7 @@ class BasePage():
         self.browser.implicitly_wait(timeout)
 
     def go_to_login_page(self):
-        assert self.is_element_present(*BasePageLocators.LOGIN_LINK), "Login link is not presented" #поменять локатор на LOGIN_LINK_INVALID чтобы проверить, что показывается сообщение об ошибке
+        assert self.is_element_present(*BasePageLocators.LOGIN_LINK), "Login link is not presented"
         link = self.browser.find_element(*BasePageLocators.LOGIN_LINK)
         link.click()
 
