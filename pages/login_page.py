@@ -1,7 +1,6 @@
 from .base_page import BasePage
 from .locators import LoginPageLocators
 from selenium.webdriver.common.by import By
-import time
 
 
 class LoginPage(BasePage):
@@ -24,16 +23,13 @@ class LoginPage(BasePage):
         input1 = browser.find_element(By.CSS_SELECTOR, "#id_registration-email")
         input1.send_keys(email)
         print(email)
-        time.sleep(2)
         input2 = browser.find_element(By.CSS_SELECTOR, "#id_registration-password1")
         input2.send_keys(password)
         print(password)
-        time.sleep(2)
         input3 = browser.find_element(By.CSS_SELECTOR, "#id_registration-password2")
         input3.send_keys(password)
         print(password)
-        time.sleep(2)
         button_register = browser.find_element(By.CSS_SELECTOR, "#register_form .btn-primary")
         print(button_register.text)
         button_register.click()
-        time.sleep(6)
+
